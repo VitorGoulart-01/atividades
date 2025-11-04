@@ -29,7 +29,7 @@ public class ExControleer {
 
     }
 
-    @GetMapping("/api/soma/{numU}/{numeroD}")
+    @GetMapping("/api/soma/{numeroU}/{numeroD}")
     public int soma(@PathVariable int numeroU, @PathVariable int numeroD){
         
         resultado = numeroU + numeroD;
@@ -38,7 +38,7 @@ public class ExControleer {
 
     }
 
-    @GetMapping("/api/Subtrair/{numUm}/{numeroDois}")
+    @GetMapping("/api/subtrair/{numUm}/{numDois}")
     public int Subtrair(@PathVariable int numUm, @PathVariable int numDois ) {
         resultado = numUm - numDois;
 
@@ -46,10 +46,10 @@ public class ExControleer {
 
     }
 
-    @GetMapping("/VerificarParouImpar")
-    public String Verificar() {
+    @GetMapping("/api/{numUm}/verificar")
+    public String Verificar(@PathVariable int numUm) {
 
-        if(resultado % 2 == 0){
+        if(numUm % 2 == 0){
 
             return "E par";
 
